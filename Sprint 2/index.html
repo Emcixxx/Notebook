@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notatnik</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Notatnik</h1>
+<textarea id="noteInput" placeholder="Napisz notatkę" oninput="adjustTextareaHeight(this)"></textarea>
+<button onclick="addOrUpdateNote()">Dodaj</button>
+<button onclick="clearNotes()">Usuń wszystko</button>
+<div id="noteList"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
