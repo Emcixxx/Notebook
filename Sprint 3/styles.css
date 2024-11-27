@@ -1,0 +1,162 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(32deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: beige;
+    color: black;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#noteInput {
+    display: block;
+    width: 300px;
+    font-size: 16px;
+    font-family: "JetBrains Mono", monospace;
+    line-height: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #f0f8ff 95%, transparent 90%);
+    background-size: 100% 20px;
+    background-attachment: local;
+    background-color: #00c8fe7a;
+    border: 2px solid #000;
+    border-radius: 16px;
+    resize: none;
+    overflow-y: hidden;
+    outline: none;
+}
+
+.note-card {
+  display: block;
+  width: 300px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+  max-width: 90%;
+  white-space: pre-wrap;
+}
+
+.note-card-content {
+    font-size: 16px;
+    font-family: "JetBrains Mono", monospace;
+    line-height: 1.5;
+}
+
+.note-card-done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.note-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.note-card-delete,
+.note-card-edit,
+.note-card-check {
+  cursor: pointer;
+  color: #ff4d4d;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  transition: background-color 0.3s;
+}
+
+.note-card-edit {
+  color: #4d94ff;
+  background-color: #e6f0ff;
+}
+
+.note-card-check {
+  color: #28a745;
+  background-color: #e6ffe6;
+}
+
+.note-card-delete:hover {
+  background-color: #ffcccc;
+}
+
+.note-card-edit:hover {
+  background-color: #cce0ff;
+}
+
+.note-card-check:hover {
+  background-color: #c8f7c5;
+}
+
+.note-card-checkbox {
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+}
+
+.note-card-checkbox input {
+   margin-right: 5px;
+}
+
+.noteInputButton {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #60ff00 0, #21ffb4 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.noteInputButton:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.noteInputButton:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.noteInputButton:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}

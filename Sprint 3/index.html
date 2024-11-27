@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notatnik</title>
+<link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <h1>Notatnik&trade;</h1>
+    <textarea id="noteInput" placeholder="Napisz notatkę..." oninput="adjustTextareaHeight(this)"></textarea>
+    <br />
+    <div>
+        <button id="addNoteButton" class="noteInputButton" onclick="addOrUpdateNote()">Dodaj</button>
+        <button id="clearNoteButton" class="noteInputButton" onclick="clearNotes()">Usuń wszystko</button>
+    </div>
+    <div id="noteList"></div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
