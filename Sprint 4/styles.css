@@ -1,0 +1,387 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(32deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: beige;
+    color: black;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#noteInput {
+    display: block;
+    width: 330px;
+    font-size: 16px;
+    font-family: "JetBrains Mono", monospace;
+    line-height: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #ffffff 95%, transparent 100%);
+    background-size: 100% 20px;
+    background-attachment: local;
+    background-color: #00c8fe7a;
+    border: 2px solid #000;
+    border-radius: 16px;
+    resize: none;
+    overflow-y: hidden;
+    outline: none;
+}
+
+/*�� 09.12*/
+.note-input ul {
+    margin: 0px;
+    padding-left: 20px; 
+    line-height: 20px; 
+    list-style-position: inside; 
+}
+
+.note-input li {
+    margin: 0;
+    line-height: 20px; 
+}
+/*�� */
+
+/* BK */
+
+.sortbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sortbar label {
+    font-size: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(to bottom, #f0f8ff 95%, transparent 90%);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.sortbar button {
+    font-size: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #FFCC70;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sortbar button:hover {
+    background-color: #C850C0;
+}
+
+/* BK */
+
+
+
+
+
+.note-card {
+  display: block;
+  width: 340px;
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+
+.category-section label {
+    background-color: linear-gradient(to bottom, #f0f8ff 95%, transparent 90%); 
+    color: black; 
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 16px;
+    margin-right: 10px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/*�� 09.12*/
+#textFormatting {
+    margin: 10px 0;
+}
+
+#textFormatting button {
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #e6f0ff;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#textFormatting button:hover {
+    background-color: #cce0ff;
+}
+
+.toolbar {
+    width: 350px;
+    display: flex;
+    padding: 10px;
+    gap: 8px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar button {
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+background-color: #fff;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.2s, transform 0.1s;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.toolbar button:active {
+    background-color: #e0e0e0;
+    transform: scale(0.95);
+}
+
+.toolbar button.active {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+.color-btn {
+border-radius: 50%;
+border: 1px solid #ddd;
+}
+
+.color-btn.yellow {
+background-color: yellow;
+}
+
+.color-btn.blue {
+background-color: blue;
+}
+
+.color-btn.red {
+background-color: red;
+}
+
+.color-btn.black {
+background-color: black;
+}
+
+/*��      */
+
+.note-input {
+    width: 300px;
+    height: 200px;
+    padding: 16px;
+    background-color: #f0f8ff;
+    border: 2px solid #000;
+    border-radius: 16px;
+    resize: none;
+    overflow-y: hidden;
+    outline: none;
+    font-family: "JetBrains Mono", monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.note-input[contenteditable="true"]:empty:before {
+    content: attr(placeholder);
+    color: gray;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+
+
+.note-card-content {
+    font-size: 16px;
+    font-family: "JetBrains Mono", monospace;
+    line-height: 1.5;
+}
+
+.note-card-done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.note-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+
+/* BK */
+.note-card-pinned {
+    appearance: none; /* Reset default checkbox styles */
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+    cursor: crosshair;
+    outline: 3px double rgb(135, 20, 202);
+
+}
+
+.note-card-pinned:checked {
+    outline: 2px dashed orangered;
+    background-color: red; /* Background color when checked */
+
+}
+
+
+/* BK */
+
+
+
+.note-card-delete,
+.note-card-edit,
+.note-card-check {
+  cursor: pointer;
+  color: #ff4d4d;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  transition: background-color 0.3s;
+}
+
+.note-card-edit {
+  color: #4d94ff;
+  background-color: #e6f0ff;
+}
+
+.note-card-check {
+  color: #28a745;
+  background-color: #e6ffe6;
+}
+
+.note-card-delete:hover {
+  background-color: #ffcccc;
+}
+
+.note-card-edit:hover {
+  background-color: #cce0ff;
+}
+
+.note-card-check:hover {
+  background-color: #c8f7c5;
+}
+
+.note-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.title-section {
+    margin-bottom: 12px;
+}
+
+#noteTitle {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    text-align:center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.noteInputButton {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #60ff00 0, #21ffb4 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.noteInputButton:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.noteInputButton:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.noteInputButton:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+

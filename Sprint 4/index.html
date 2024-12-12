@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notatnik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Notatnik&trade;</h1>
+
+
+    <!-- BK -->
+     <div id="sortbar" class="sortbar">
+        <label>Sortuj po:</label>
+
+        <button onclick="sortNotes('title')">Tytule</button>
+        <button onclick="sortNotes('category')">Kategorii</button>
+        <button onclick="sortNotes('checked')">Przypietych</button>
+        <!-- 
+        <button onclick="sortNotes('date')">Dacie</button> 
+         -->
+    </div>
+    <!-- BK -->
+
+    <div class="toolbar">
+        <button onclick="formatText('bold')" title="Pogrubienie"><b>B</b></button>
+        <button onclick="formatText('italic')" title="Kursywa"><i>I</i></button>
+        <button onclick="formatText('underline')" title="Podkreślenie"><u>U</u></button>
+        <button onclick="formatText('strikeThrough')" title="Przekreślenie"><s>S</s></button>
+        <button onclick="applyBulletPoint()" title="Wypunktowanie">•</button>
+        <button onclick="changeTextColor('yellow')" title="Żółty" class="color-btn yellow"></button>
+        <button onclick="changeTextColor('blue')" title="Niebieski" class="color-btn blue"></button>
+        <button onclick="changeTextColor('red')" title="Czerwony" class="color-btn red"></button>
+        <button onclick="changeTextColor('black')" title="Czarny" class="color-btn black"></button>
+    </div>
+    
+    <div class="title-section">
+        <!--<label for="noteTitle">Tytuł</label>-->
+        <input type="text" id="noteTitle" placeholder="Wpisz tytuł notatki">
+    </div>
+    
+    <div id="noteInput" class="note-input" contenteditable="true" placeholder="Napisz notatkę..." oninput="adjustTextareaHeight(this)"></div>
+
+    <br />
+    <div class="category-section">
+        <label for="categorySelect">Kategoria</label>
+        <select id="categorySelect" onchange="handleCategoryChange()">
+            <option value="">Wybierz kategorię</option>
+            <option value="Praca">Praca</option>
+            <option value="Szkoła">Szkoła</option>
+            <option value="Zakupy">Zakupy</option>
+            <option value="Do zrobienia">Do zrobienia</option>
+            <option value="custom">Inna...</option>
+        </select>
+        <input type="text" id="customCategoryInput" placeholder="Wpisz własną kategorię" style="display: none;">
+    </div>
+    <br />
+    <div>
+        <button id="addNoteButton" class="noteInputButton" onclick="addOrUpdateNote()">Dodaj</button>
+        <button id="clearNoteButton" class="noteInputButton" onclick="clearNotes()">Usuń wszystko</button>
+    </div>
+    <div id="noteList"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
