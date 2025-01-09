@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notatnik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Notatnik&trade;</h1>
+
+    <!-- BK -->
+    <!-- Element UI umożliwiający sortowanie zapisanych notatek według dostępnych kryteriów -->
+     <div id="sortbar" class="sortbar">
+        <label>Sortuj po:</label>
+
+        <!-- Przyciski do sortowania notatek według wybranych kryteriów -->
+        <button onclick="sortNotes('title')">Tytule</button>
+        <button onclick="sortNotes('category')">Kategorii</button>
+        <button onclick="sortNotes('checked')">Przypiętych</button>
+        <!-- 
+        <button onclick="sortNotes('date')">Dacie</button> 
+        -->
+    </div>
+    <!-- BK -->
+
+    <!-- Pasek narzędzi do formatowania tekstu w notatkach -->
+    <div class="toolbar">
+        <!-- Przycisk pogrubiania tekstu -->
+        <button onclick="formatText('bold')" title="Pogrubienie"><b>B</b></button>
+
+        <!-- Przycisk zmiany tekstu na kursywę -->
+        <button onclick="formatText('italic')" title="Kursywa"><i>I</i></button>
+
+        <!-- Przycisk podkreślenia tekstu -->
+        <button onclick="formatText('underline')" title="Podkreślenie"><u>U</u></button>
+
+        <!-- Przycisk przekreślenia tekstu -->
+        <button onclick="formatText('strikeThrough')" title="Przekreślenie"><s>S</s></button>
+
+        <!-- Przycisk dodania wypunktowania w tekście -->
+        <button onclick="applyBulletPoint()" title="Wypunktowanie">•</button>
+
+        <!-- Przyciski zmiany koloru tekstu -->
+        <button onclick="changeTextColor('yellow')" title="Żółty" class="color-btn yellow"></button>
+        <button onclick="changeTextColor('blue')" title="Niebieski" class="color-btn blue"></button>
+        <button onclick="changeTextColor('red')" title="Czerwony" class="color-btn red"></button>
+        <button onclick="changeTextColor('black')" title="Czarny" class="color-btn black"></button>
+    </div>
+    
+    <!-- Sekcja wprowadzania tytułu notatki -->
+    <div class="title-section">
+        <!--<label for="noteTitle">Tytuł</label>-->
+        <input type="text" id="noteTitle" placeholder="Wpisz tytuł notatki">
+    </div>
+    
+    <!-- Główne pole edycji notatki -->
+    <div id="noteInput" class="note-input" contenteditable="true" placeholder="Napisz notatkę..." oninput="adjustTextareaHeight(this)"></div>
+
+    <br />
+    <!-- Sekcja wyboru kategorii notatki -->
+    <div class="category-section">
+        <label for="categorySelect">Kategoria</label>
+        <select id="categorySelect" onchange="handleCategoryChange()">
+            <option value="">Wybierz kategorię</option>
+            <option value="Praca">Praca</option>
+            <option value="Szkoła">Szkoła</option>
+            <option value="Zakupy">Zakupy</option>
+            <option value="Do zrobienia">Do zrobienia</option>
+            <option value="custom">Inna...</option>
+        </select>
+
+        <!-- Pole tekstowe do wpisania własnej kategorii, które pojawia się po wyborze opcji "Inna..." -->
+        <input type="text" id="customCategoryInput" placeholder="Wpisz własną kategorię" style="display: none;">
+    </div>
+    
+    <br />
+
+    <!-- Sekcja z przyciskami do dodawania nowej notatki lub usuwania wszystkich notatek -->
+    <div>
+        <button id="addNoteButton" class="noteInputButton" onclick="addOrUpdateNote()">Dodaj</button>
+        <button id="clearNoteButton" class="noteInputButton" onclick="clearNotes()">Usuń wszystko</button>
+    </div>
+
+    <!-- Lista zapisanych notatek -->
+    <div id="noteList"></div>
+
+    <!-- Dołączony plik JavaScript zawierający logikę działania aplikacji -->
+    <script src="script.js"></script>
+</body>
+</html>
